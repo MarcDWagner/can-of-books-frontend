@@ -8,23 +8,25 @@ Books are life-changing. They have the power to enlighten, educate, entertain, h
 
 **Author**: Kenny Lino, Marc Wagner
 
-**Version**: 1.0.3 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 1.0.1
 
 ## Overview
 
 A library of books that the collaborators have found especially useful in their life at varying ages.
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
 
 ## Architecture
 
 Axios, MongoDB, Heroku, React, JavaScript, Bootstrap
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
 ## Change Log
 
 10-31-2022 1500 -  Set up through MongoDB and GitHub completed.
+
 10-31-2022 1530 -  Storage set up on MongoDB, schema for book data, seeded with a book route, local host 3001 works, back end server is up and running locally.
+
 10-31-2022 1700 -  Front end is up and running, local host returns default photo and book title correctly in carousel.  React router moves users from about page to home page accurately.  Conditional logic works, when deployed on live site and heroku did not deploy site stated '0 books stored'.
+
+11-01-2022 1430 - Updated /books endpoint with an add function to add more books to the database.
 
 ## Credit and Collaborations
 
@@ -32,7 +34,7 @@ Team Agreement:
 
 ### Logistical
 
-• What hours will you be available to communicate? **School hours**\
+• What hours will you be available to communicate? **School hours**
 
 • What platform will you use to communicate (ie. Slack, phone …)? **Slack/Remo**
 
@@ -46,7 +48,7 @@ Team Agreement:
 
 o **Kenny:  coding knowledge/technical, communication**
 
-o**Marc:  Communication, organization**
+o **Marc:  Communication, organization**
 
 • How can you best utilize these strengths in the development of your application?
 
@@ -92,8 +94,14 @@ o **We are going to talk about it, leave room to ask questions, and appropriatel
 - Finish time:  1530
 - Actual time needed to complete:  30
 
-- Number and Name of Feature:  #3, Book Component 
+- Number and Name of Feature:  #3, Book Component
 - Estimate of time needed to complete:  2.5
 - Start time:  1530
 - Finish time:  1800
 - Actual time needed to complete:  2.5
+
+- Number and Name of Feature:  #1, Create post book function
+- Estimate of time needed to complete:  2 hr
+- Start time:  1330
+- Finish time:  1515
+- Actual time needed to complete: 1.5 hours

@@ -1,13 +1,15 @@
 import React from 'react';
 import axios from 'axios';
 import Carousel from 'react-bootstrap/Carousel';
-
+import Button from 'react-bootstrap/Button';
+import BookFormModal from './BookFormModal';
 
 class BestBooks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      books: []
+      books: [],
+      showAddBookModal: false
     }
   }
 
@@ -22,6 +24,43 @@ class BestBooks extends React.Component {
       console.log('An error has occurred.', error.response);
     }
   }
+
+  handleBookSubmit = (event) => {
+    event.preventDefault();
+    let newBook = {
+      title: event.target.title.value,
+      description: event.target.description.value,
+      status: event.target.read.checked
+    }
+    this.postBooks(newBook);
+    this.setState({
+      showAddBookModal: false
+    })
+  }
+
+  postBooks = async (newBookObj) => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/books`;
+
+      let createdBook = await axios.post(url, newBookObj);
+
+      this.setState({
+        books: [...this.state.books, createdBook.data]
+      })
+      
+    } catch(error) {
+      console.log(error.message);
+
+    }
+  }
+
+  showModal = (event) => {
+    event.preventDefault();
+    this.setState({
+      showAddBookModal: true
+    })
+  }
+
   componentDidMount() {
     this.getBooks();
   }
@@ -49,7 +88,15 @@ console.log(bookDataParse);
       <>
 
         <h2>My Essential Lifelong Learning &amp; Formation Shelf</h2>
-
+        <Button type="submit" onClick={this.showModal}>Add New Book</Button>       
+        
+        {this.state.showAddBookModal ?
+        <BookFormModal 
+          handleBookSubmit={this.handleBookSubmit}
+        />
+        :
+        <></>
+        }
         {this.state.books.length ? (
           <Carousel>
             {bookDataParse}
