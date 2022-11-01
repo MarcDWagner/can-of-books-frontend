@@ -1,3 +1,7 @@
+.navbar {
+  gap: 1em;
+}
+
 .nav-link {
-  color: white;
+  color: white !important;
 }
