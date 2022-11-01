@@ -28,6 +28,8 @@ Axios, MongoDB, Heroku, React, JavaScript, Bootstrap
 
 11-01-2022 1430 - Updated /books endpoint with an add function to add more books to the database.
 
+11-02-2022 1600 - Added front-end delete functionality.
+
 ## Credit and Collaborations
 
 Team Agreement:
@@ -105,3 +107,12 @@ o **We are going to talk about it, leave room to ask questions, and appropriatel
 - Start time:  1330
 - Finish time:  1515
 - Actual time needed to complete: 1.5 hours
+
+- Number and Name of Feature:  #2, Create delete book function
+- Estimate of time needed to complete:  1 hr
+- Start time:   1520
+- Finish time:  1610
+- Actual time needed to complete: 50 minutes
+
+
+
