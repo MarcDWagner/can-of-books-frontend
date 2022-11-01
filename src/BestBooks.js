@@ -25,6 +25,23 @@ class BestBooks extends React.Component {
     }
   }
 
+  deleteBook = async (id) => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/books/${id}`;
+
+      await axios.delete(url);
+
+      let updatedBooks = this.state.books.filter(book => book._id !== id);
+
+      this.setState({
+        books: updatedBooks
+      });
+     
+    } catch(error) {
+      console.log(error.message);
+    }
+  }
+
   handleBookSubmit = (event) => {
     event.preventDefault();
     let newBook = {
@@ -79,6 +96,7 @@ class BestBooks extends React.Component {
         />
         <Carousel.Caption>
           <h3>{book.title}</h3>
+          <Button type="submit" onClick={() => this.deleteBook(book._id)}>Delete</Button>
         </Carousel.Caption>
       </Carousel.Item>
       )
