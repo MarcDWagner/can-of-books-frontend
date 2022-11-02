@@ -84,6 +84,8 @@ o **We are going to talk about it, leave room to ask questions, and appropriatel
 
 ## Time Estimates
 
+### 10-31-2022
+
 - Number and Name of Feature:  # 1 set up repo
 - Estimate of time needed to complete:  1hr
 - Start time:  1415
@@ -102,6 +104,8 @@ o **We are going to talk about it, leave room to ask questions, and appropriatel
 - Finish time:  1800
 - Actual time needed to complete:  2.5
 
+### 11-1-2022
+
 - Number and Name of Feature:  #1, Create post book function
 - Estimate of time needed to complete:  2 hr
 - Start time:  1330
@@ -114,5 +118,16 @@ o **We are going to talk about it, leave room to ask questions, and appropriatel
 - Finish time:  1610
 - Actual time needed to complete: 50 minutes
 
+### 11-2-2022
 
+- Number and Name of Feature:  #1 'put' for backend
+- Estimate of time needed to complete:  45
+- Start time:  1300
+- Finish time:  1330
+- Actual time needed to complete: 30
 
+- Number and Name of Feature:  #1 'put' for frontend
+- Estimate of time needed to complete:  1
+- Start time:  1330
+- Finish time:  
+- Actual time needed to complete: 

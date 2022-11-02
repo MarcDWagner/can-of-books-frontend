@@ -3,13 +3,17 @@ import axios from 'axios';
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import BookFormModal from './BookFormModal';
+import UpdateBookForm from './UpdateBookForm';
+
 
 class BestBooks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       books: [],
-      showAddBookModal: false
+      showAddBookModal: false,
+      showUpdateForm: false,
+      selectedBook: {}
     }
   }
 
@@ -55,6 +59,12 @@ class BestBooks extends React.Component {
     })
   }
 
+  hideUpdateForm = () => {
+     this.setState({
+      showUpdateForm: false
+    })
+  }
+
   postBooks = async (newBookObj) => {
     try {
       let url = `${process.env.REACT_APP_SERVER}/books`;
@@ -70,6 +80,23 @@ class BestBooks extends React.Component {
 
     }
   }
+
+  updateBooks = async (bookToUpdate) => {
+    try {
+      let url = `${process.env.REACT_APP_SERVER}/books/${bookToUpdate._id}`
+      let updatedBook = await axios.put(url, bookToUpdate);
+      let updatedBookArr = this.state.books.map(existingBook => {
+        return existingBook._id === bookToUpdate._id
+        ? updatedBook.data
+        : existingBook
+      });
+      this.setState({
+        books: updatedBookArr
+      });
+    } catch(error){
+      console.log(error.message);
+ }  
+}
 
   showModal = (event) => {
     event.preventDefault();
@@ -97,6 +124,7 @@ class BestBooks extends React.Component {
         <Carousel.Caption>
           <h3>{book.title}</h3>
           <Button type="submit" onClick={() => this.deleteBook(book._id)}>Delete</Button>
+          <Button type="submit" onClick={() => this.setState({ selectedBook: book, showUpdateForm: true })}>Update</Button>
         </Carousel.Caption>
       </Carousel.Item>
       )
@@ -122,8 +150,16 @@ console.log(bookDataParse);
         ) : (
           <h3>No Books Found :(</h3>
         )}
-
-
+        {this.state.showUpdateForm ? (
+        <UpdateBookForm 
+          updateBooks={this.updateBooks}
+          selectedBook={this.state.selectedBook}
+          hideUpdateForm={this.hideUpdateForm}
+        />
+        ) : (
+          <></>
+        )
+        }
 
       </>
     )
