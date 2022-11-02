@@ -129,5 +129,5 @@ o **We are going to talk about it, leave room to ask questions, and appropriatel
 - Number and Name of Feature:  #1 'put' for frontend
 - Estimate of time needed to complete:  1
 - Start time:  1330
-- Finish time:  
-- Actual time needed to complete: 
+- Finish time:  1430
+- Actual time needed to complete: 1
